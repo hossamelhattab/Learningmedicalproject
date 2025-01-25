@@ -3,12 +3,22 @@ import Image from "next/image";
 import Link from "next/link";
 import { AiOutlineAlert } from "react-icons/ai";
 import { BsCalendarDateFill } from "react-icons/bs";
-import { FaHeartbeat } from "react-icons/fa";
-import { FaMagnifyingGlass, FaArrowRight } from "react-icons/fa6";
+import { FaExternalLinkAlt, FaHeartbeat } from "react-icons/fa";
+import {
+  FaMagnifyingGlass,
+  FaArrowRight,
+  FaUserDoctor,
+  FaHandHoldingHeart,
+} from "react-icons/fa6";
 import { GiCrossedBones } from "react-icons/gi";
 import { LiaClinicMedicalSolid } from "react-icons/lia";
 import { LuBrain } from "react-icons/lu";
-import { RiHospitalLine, RiMicrosoftLoopLine } from "react-icons/ri";
+import { MdLocationPin } from "react-icons/md";
+import {
+  RiHospitalFill,
+  RiHospitalLine,
+  RiMicrosoftLoopLine,
+} from "react-icons/ri";
 import { SlOptionsVertical } from "react-icons/sl";
 
 export default function Home() {
@@ -17,14 +27,19 @@ export default function Home() {
       <Navbar />
 
       {/* Hero */}
-      <div className="bg-red-400 mt-32 px-10">
+      <div className="mt-32 px-10">
         <div
           className="rounded-3xl relative flex flex-col overflow-hidden bg-none
         before:content-[''] before:w-full before:h-full before:absolute before:top-0 before:z-[1] before:bg-[linear-gradient(to_right,rgba(0,0,0,0.7)_0%,rgba(0,0,0,0.55)_32%,rgba(0,0,0,0.1)_67%,rgba(0,0,0,0)_100%)]
         "
         >
           <div className="relative h-[700px] w-full">
-            <Image fill src="/homepage.jpg" alt="homepage" className="" />
+            <Image
+              fill
+              src="/homepage.jpg"
+              alt="homepage"
+              className="object-cover"
+            />
           </div>
 
           <div className="absolute ml-10 bottom-[5%] z-[1]">
@@ -111,6 +126,64 @@ export default function Home() {
 
       {/* Sec 2 */}
       <Section2 />
+
+      {/* Sec 3 */}
+      <div className="w-full p-24 items-center flex flex-col">
+        <h1 className="text-6xl text-center mb-10">
+          Your personalized health portal — anytime, anywhere.
+        </h1>
+
+        <div className="flex lg:flex-row flex-col gap-10">
+          <div
+            className="flex flex-col justify-center gap-5 bg-ppink text-white rounded-2xl p-10 shadow-xl"
+            style={{ flex: "0 0 33.3%" }}
+          >
+            <ul className="list-disc text-xl" style={{ lineHeight: "2.5rem" }}>
+              <li>Schedule appointments</li>
+              <li>Get virtual urgent care</li>
+              <li>View lab results</li>
+              <li>Message your care team</li>
+              <li>Request refills</li>
+              <li>Access medical records</li>
+            </ul>
+            <br />
+            <h1 className="text-xl font-bold">Do you have an account?</h1>
+            <p className="text-lg">
+              Sign up now or access services as a guest.{" "}
+            </p>
+            <Link href={""} className="flex gap-2 font-bold">
+              Visit the MyCommonSpirit – Mountain patient portal Visit the
+              MyCommonSpirit – Mountain patient portal
+              <FaExternalLinkAlt />
+            </Link>
+          </div>
+
+          <Image
+            src="/home_2.jpg"
+            alt="homepage"
+            width={897}
+            height={897}
+            className="rounded-3xl flex-[2]"
+            style={{ flex: "0 0 66.6%" }}
+          />
+        </div>
+      </div>
+
+      {/* Sec 4 */}
+      <Section4 />
+
+      {/* Colorado map */}
+
+      <div
+        className="w-full bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: "url('colorado_map.png')",
+          backgroundAttachment: "fixed",
+          height: "90vh",
+        }}
+      ></div>
+
+      <Section4 />
     </div>
   );
 }
@@ -183,7 +256,7 @@ const Section2 = () => {
   ];
 
   return (
-    <div className="w-full bg-slate-100 flex items-center justify-center mt-20 ">
+    <div className="p-10 w-full bg-slate-100 flex items-center justify-center mt-20 ">
       <div className="w-full flex flex-col lg:flex-row py-20 gap-10 max-w-[30rem] lg:max-w-[1300px]">
         <div className="flex flex-col flex-[2] gap-5">
           <h1 className="text-2xl">Our services</h1>
@@ -242,6 +315,58 @@ const Section2 = () => {
             <FaArrowRight />
           </Link>
         </div>
+      </div>
+    </div>
+  );
+};
+
+const Section4 = () => {
+  const data = [
+    {
+      label: "21,000+",
+      description: "Incredible Caregivers",
+      icon: <FaUserDoctor size={"3rem"} className="" />,
+    },
+    {
+      label: "240+",
+      description: "Physician/Provider Practices and Clinics",
+      icon: <MdLocationPin size={"3rem"} className="" />,
+    },
+    {
+      label: "20",
+      description: "Hospitals Across Colorado, Kansas and Utah",
+      icon: <RiHospitalFill size={"3rem"} className="" />,
+    },
+    {
+      label: "1",
+      description: "Mission",
+      icon: <FaHandHoldingHeart size={"3rem"} className="" />,
+    },
+  ];
+
+  return (
+    <div className="w-full p-20 bg-slate-100 flex items-center flex-col gap-2">
+      <h1 className="text-5xl text-center mb-10">
+        Meet Our Connected System of Hospitals, Clinics and Caregivers
+      </h1>
+      <h1 className="text-lg text-center text-ppink max-w-[50rem]">
+        From big cities to small towns, our physicians and caregivers are proud
+        members of the communities they serve.
+      </h1>
+
+      <div className="w-full flex justify-around">
+        {data.map(({ label, description, icon }, index) => (
+          <div
+            key={index}
+            className="flex flex-col items-center justify-center gap-3 max-w-[14rem]"
+          >
+            <div className="w-20 h-20 flex justify-center items-center rounded-full text-[#00AE9D]">
+              {icon}
+            </div>
+            <h1 className="text-4xl">{label}</h1>
+            <p className="text-lg text-slate-600 text-center">{description}</p>
+          </div>
+        ))}
       </div>
     </div>
   );

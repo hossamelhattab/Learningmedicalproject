@@ -1,5 +1,4 @@
 "use client";
-
 import DropdownButton from "@/components/DropdownButton";
 import Image from "next/image";
 import Link from "next/link";
@@ -119,7 +118,7 @@ export default function Navbar() {
             <div className="flex gap-2 items-center">
               <Link
                 href="/"
-                className="text-ppink text-center font-medium border-2 border-ppink rounded-full px-3 py-1.5 hover:bg-ppink hover:text-white transition-colors duration-300"
+                className="text-ppink text-center font-medium border-2 border-ppink rounded-full px-3 py-2.5 hover:bg-ppink hover:text-white transition-colors duration-300"
               >
                 Schedule Appointment
               </Link>

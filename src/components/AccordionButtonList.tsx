@@ -9,7 +9,7 @@ export default function AccordionButtonList({ data }: props) {
   return (
     <div id="accordion-collapse" data-accordion="collapse">
       {data.map(({ label, items }, index) => (
-        <>
+        <div key={index}>
           <h2 id={"accordion-collapse-heading-" + index}>
             <button
               type="button"
@@ -65,7 +65,7 @@ export default function AccordionButtonList({ data }: props) {
               </ul>
             </div>
           </div>
-        </>
+        </div>
       ))}
     </div>
   );

@@ -29,7 +29,7 @@ DropdownButtonProps) => {
         data-dropdown-toggle={"dropdownNavbar" + id}
         className="text-ppink md:p-4 font-medium flex items-center justify-between w-full md:w-auto"
       >
-        <span className="underline-effect">{buttonText}</span>{" "}
+        <span className="underline-effect font-semibold">{buttonText}</span>{" "}
         <svg
           className="w-4 h-4 ml-1"
           fill="currentColor"
@@ -46,9 +46,12 @@ DropdownButtonProps) => {
 
       <div
         id={"dropdownNavbar" + id}
-        className="hidden bg-white text-base z-10 list-none divide-y divide-gray-100 rounded shadow my-4 w-44"
+        className="hidden bg-white text-base z-10 rounded shadow my-4 w-72 text-wrap"
       >
-        <ul className="py-1" aria-labelledby="dropdownLargeButton">
+        <ul
+          className="py-1 divide-y divide-gray-100"
+          aria-labelledby="dropdownLargeButton"
+        >
           {items.map((item, index) => (
             <li key={index}>
               <a
@@ -56,7 +59,7 @@ DropdownButtonProps) => {
                 className="hover:bg-gray-100 text-ppink font-medium  flex justify-between items-center px-4 py-2"
               >
                 <span>{item.label}</span>
-                <FaArrowRight />
+                <FaArrowRight className="min-w-4" />
               </a>
             </li>
           ))}

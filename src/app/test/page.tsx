@@ -1,12 +1,15 @@
-import AccordionButtonList from "@/components/AccordionButtonList";
-
 export default function Page() {
   return (
-    <AccordionButtonList
-      data={[
-        { label: "test", items: [{ label: "test", href: "#" }] },
-        { label: "test2", items: [{ label: "test2", href: "#" }] },
-      ]}
-    />
+    <>
+      <input
+        type="text"
+        placeholder="Search providers, specialties, locations and services"
+        className="w-full bg-transparent outline-2 outline-offset-2 outline-solid"
+      />
+
+      <button className="outline-2 outline outline-ppink outline-offset-2 outline-solid ...">
+        Button A
+      </button>
+    </>
   );
 }

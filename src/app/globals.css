@@ -41,3 +41,4 @@ body {
 .heading-text {
   @apply bg-gradient-to-br from-[#FFFFFF] to-[#AAAAAA] bg-clip-text p-4 text-6xl font-extrabold text-transparent;
 }
+

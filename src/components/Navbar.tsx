@@ -98,7 +98,7 @@ export default function Navbar() {
           </div>
         </div>
 
-        <div className="w-full bg-slate-50 flex justify-between items-center nav-container">
+        <div className="py-2 w-full bg-white flex justify-between items-center nav-container">
           <Link href="/" className="min-w-44">
             <Image src="/logo_2.png" alt="logo" width={200} height={200} />
           </Link>

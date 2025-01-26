@@ -27,14 +27,20 @@ export default function Home() {
     <div className="font-[family-name:var(--font-geist-sans)]">
       <Navbar />
 
-      {/* Hero */}
       <div className="mt-32 px-10">
+        {/* Hero 2 */}
         <div
-          className="rounded-3xl relative flex flex-col overflow-hidden bg-none
-        before:content-[''] before:w-full before:h-full before:absolute before:top-0 before:z-[1] before:bg-[linear-gradient(to_right,rgba(0,0,0,0.7)_0%,rgba(0,0,0,0.55)_32%,rgba(0,0,0,0.1)_67%,rgba(0,0,0,0)_100%)]
-        "
+          className="relative flex flex-col justify-center bg-[#F2F3F7]
+         lg:!items-start lg:bg-none lg:overflow-hidden lg:pb-[56.25%] lg:mx-[5rem] lg:rounded-[2rem] lg:!h-auto
+         lg:before:content-[''] lg:before:w-full lg:before:h-full lg:before:absolute lg:before:top-0 lg:before:z-[1] lg:before:bg-[linear-gradient(to_right,rgba(0,0,0,0.7)_0%,rgba(0,0,0,0.55)_32%,rgba(0,0,0,0.1)_67%,rgba(0,0,0,0)_100%)]
+         before:content-[''] before:w-full before:h-full before:absolute before:top-0 before:z-[1] before:bg-[linear-gradient(to_top,rgba(255,255,255,0.7)_0%,rgba(255,255,255,0.55)_32%,rgba(255,255,255,0.1)_67%,rgba(255,255,255,0)_100%)]
+         "
         >
-          <div className="relative h-[1000px] w-full">
+          <div
+            className="lg:!absolute lg:top-0 lg:left-0 lg:w-full lg:h-full
+          relative h-[500px]
+          "
+          >
             <Image
               fill
               src="/homepage.jpg"
@@ -43,11 +49,30 @@ export default function Home() {
             />
           </div>
 
-          <div className="absolute ml-10 bottom-[15%] z-[1]">
-            <p className="text-2xl text-white mb-5">Hello humankindness®</p>
-            <p className="text-6xl text-white mb-6">Humankindness is here</p>
+          <div
+            className="lg:mt-0 lg:bg-none lg:!absolute lg:px-[3rem] lg:bottom-[5%]
+            z-[2] pb-[2rem] -mt-[4rem] bg-transparent
 
-            <div className="bg-slate-100 rounded-2xl flex flex-col gap-5 p-8">
+          "
+          >
+            <div className="lg:block hidden">
+              <p className="text-2xl text-white mb-5">Hello humankindness®</p>
+              <p className="text-6xl text-white mb-6">Humankindness is here</p>
+            </div>
+
+            <div
+              className="
+              lg:p-[3rem] lg:m-w-[84rem] lg:bg-[#F2F2F2]
+              rounded-[2rem] bg-white p-[2rem]
+              flex flex-col gap-5
+              shadow-xl
+            "
+            >
+              <div className="lg:hidden block text-ppink">
+                <p className="text-xl mb-1">Hello humankindness®</p>
+                <p className="text-3xl mb-2">Humankindness is here</p>
+              </div>
+
               <div className="w-full relative text-ppink">
                 <input
                   placeholder="Search providers, specialties, locations and services"
@@ -60,11 +85,16 @@ export default function Home() {
                 />
               </div>
 
-              <div className="flex gap-3">
+              <div className="flex lg:flex-row flex-col gap-3">
                 <HeroActionCards />
               </div>
 
-              <div className="flex gap-3">
+              <div
+                className="
+                lg:flex-row
+                flex flex-col gap-3
+              "
+              >
                 <Link
                   href="/"
                   className="text-ppink text-center font-medium border-2 border-ppink rounded-full px-3 py-2.5 hover:bg-ppink hover:text-white transition-colors duration-300"
@@ -216,7 +246,10 @@ const HeroActionCards = () => {
     <Link
       key={index}
       href={href}
-      className="bg-white w-full rounded-lg flex flex-col p-5 gap-3 group"
+      className="
+      bg-slate-100 w-full rounded-lg flex flex-row p-5 gap-3 group
+      lg:bg-white lg:!flex-col 
+      "
     >
       <div className="w-[3.5rem] h-[3.5rem] text-[#00AE9D] group-hover:text-ppink p-1">
         {icon}
@@ -225,7 +258,7 @@ const HeroActionCards = () => {
         <h1 className="text-2xl leading-none whitespace-nowrap">{title}</h1>
         <p className="font-medium whitespace-nowrap">{description}</p>
       </div>
-      <h1 className="text-ppink flex gap-2 items-center">
+      <h1 className="text-ppink flex gap-2 items-center ml-auto lg:!ml-0">
         Explore
         <FaArrowRight className="group-hover:translate-x-2 transition duration-300" />
       </h1>

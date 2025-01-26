@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+// import localFont from "next/font/local";
+
 // import Script from "next/script";
 import "./globals.css";
+
+// const fontIsidora = localFont({
+//   src: [{ path: "../../public/IsidoraSans-Medium.otf", weight: "600" }],
+// });
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,6 +33,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        // className={`${fontIsidora.className} antialiased`}
       >
         {children}
 

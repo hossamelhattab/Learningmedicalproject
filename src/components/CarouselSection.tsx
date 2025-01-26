@@ -1,8 +1,14 @@
 "use client";
-import { useState } from "react";
+import { JSX, SetStateAction, useState } from "react";
 import { FaArrowDown, FaArrowUp } from "react-icons/fa";
 
-function Carousel({ direction = "horizontal", slides }) {
+function Carousel({
+  direction = "horizontal",
+  slides,
+}: {
+  direction: "horizontal" | "vertical";
+  slides: JSX.Element[];
+}) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextSlide = () => {
@@ -13,7 +19,7 @@ function Carousel({ direction = "horizontal", slides }) {
     setCurrentIndex((prev) => (prev - 1 + slides.length) % slides.length);
   };
 
-  const goToSlide = (index) => {
+  const goToSlide = (index: SetStateAction<number>) => {
     setCurrentIndex(index);
   };
 

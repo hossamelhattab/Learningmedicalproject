@@ -1,15 +1,35 @@
 export default function Page() {
   return (
     <>
-      <input
-        type="text"
-        placeholder="Search providers, specialties, locations and services"
-        className="w-full bg-transparent outline-2 outline-offset-2 outline-solid"
-      />
+      <div className="flex border-2 border-black">
+        <div
+          className="bg-red-400 h-16"
+          style={{ flexBasis: "100px", flexGrow: 1 }}
+        >
+          Welcome
+        </div>
 
-      <button className="outline-2 outline outline-ppink outline-offset-2 outline-solid ...">
-        Button A
-      </button>
+        <div
+          className="bg-blue-400 h-16"
+          style={{ flexBasis: "100px", flexGrow: 2 }}
+        >
+          Welcome
+        </div>
+      </div>
+
+      <div className="flex border-2 border-black">
+        <div className="bg-red-400 h-16" style={{ flex: "1" }}>
+          Welcome
+        </div>
+
+        <div className="bg-blue-400 h-16" style={{ flex: "2" }}>
+          Welcome
+        </div>
+      </div>
+
+      <div className="text-[32px]">Hello world</div>
+
+      <div className="text-[2rem]">Hello world</div>
     </>
   );
 }

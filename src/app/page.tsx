@@ -20,6 +20,7 @@ import {
   RiMicrosoftLoopLine,
 } from "react-icons/ri";
 import { SlOptionsVertical } from "react-icons/sl";
+import CarouselSection from "@/components/CarouselSection";
 
 export default function Home() {
   return (
@@ -33,7 +34,7 @@ export default function Home() {
         before:content-[''] before:w-full before:h-full before:absolute before:top-0 before:z-[1] before:bg-[linear-gradient(to_right,rgba(0,0,0,0.7)_0%,rgba(0,0,0,0.55)_32%,rgba(0,0,0,0.1)_67%,rgba(0,0,0,0)_100%)]
         "
         >
-          <div className="relative h-[700px] w-full">
+          <div className="relative h-[1000px] w-full">
             <Image
               fill
               src="/homepage.jpg"
@@ -42,9 +43,9 @@ export default function Home() {
             />
           </div>
 
-          <div className="absolute ml-10 bottom-[5%] z-[1]">
-            <p className="text-2xl text-white mb-1">Hello humankindness®</p>
-            <p className="text-6xl text-white mb-2">Humankindness is here</p>
+          <div className="absolute ml-10 bottom-[15%] z-[1]">
+            <p className="text-2xl text-white mb-5">Hello humankindness®</p>
+            <p className="text-6xl text-white mb-6">Humankindness is here</p>
 
             <div className="bg-slate-100 rounded-2xl flex flex-col gap-5 p-8">
               <div className="w-full relative text-ppink">
@@ -136,7 +137,7 @@ export default function Home() {
         <div className="flex lg:flex-row flex-col gap-10">
           <div
             className="flex flex-col justify-center gap-5 bg-ppink text-white rounded-2xl p-10 shadow-xl"
-            style={{ flex: "0 0 33.3%" }}
+            style={{ flex: "0 0 360px" }}
           >
             <ul className="list-disc text-xl" style={{ lineHeight: "2.5rem" }}>
               <li>Schedule appointments</li>
@@ -164,7 +165,7 @@ export default function Home() {
             width={897}
             height={897}
             className="rounded-3xl flex-[2]"
-            style={{ flex: "0 0 66.6%" }}
+            style={{ flex: "1 1" }}
           />
         </div>
       </div>
@@ -183,7 +184,8 @@ export default function Home() {
         }}
       ></div>
 
-      <Section4 />
+      {/* Carousel */}
+      <Section5 />
     </div>
   );
 }
@@ -367,6 +369,17 @@ const Section4 = () => {
             <p className="text-lg text-slate-600 text-center">{description}</p>
           </div>
         ))}
+      </div>
+    </div>
+  );
+};
+
+const Section5 = () => {
+  return (
+    <div className="w-full h-[900px] p-20 bg-slate-100 relative">
+      <Image src={"/home_3.jpg"} alt="homepage" fill className="object-cover" />
+      <div className="absolute top-1/2 right-[10%] -translate-y-1/2 ">
+        <CarouselSection />
       </div>
     </div>
   );
